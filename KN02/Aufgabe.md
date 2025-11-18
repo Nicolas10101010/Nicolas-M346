@@ -35,4 +35,4 @@
 
 ### 3. Instanz-Details (sichtbares Schlüsselpaar)
 
-![Instanz-Detail-Key](Images/Instanz-Detail.png)
+![Instanz-Detail-Key](Images/instanz-details-key.png)
