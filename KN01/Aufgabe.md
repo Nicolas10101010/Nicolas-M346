@@ -22,3 +22,4 @@ Ich vermute, dass **Hyper-V ein Typ-1-Hypervisor** ist, da er die Hardware direk
 ### Konfiguration RAM
 
 Wurde mit Thomas und Nico gemacht.
+Befindet sich auf dem Repository von Nico.
