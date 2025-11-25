@@ -1,0 +1,16 @@
+#cloud-config                                    # Magic String: Zeigt an, dass dies eine Cloud-init Config ist
+users: # Liste von Benutzern, die erstellt werden sollen
+  - name: ubuntu # Benutzername: "ubuntu" (der Standard-User)
+    groups: [users, admin] # Füge diesen User zu den Gruppen "users" und "admin" hinzu
+    shell: /bin/bash # Standard-Shell für diesen User (Bash)
+    sudo: ALL=(ALL) NOPASSWD:ALL # sudo-Regel: User kann ALLE Befehle als sudo ausführen, OHNE Passwort eingeben zu müssen
+    ssh_authorized_keys: # Liste von SSH Public Keys, die sich einloggen dürfen
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0MABxv8adiwJh4kFYhBvK2tzkp89LOVSZCG5nGgyM88UmQi/pBpoDlGztezeXnXsNqG4ytNcFeN+NhFnDSLqkrM2wgvN7/9ZoITGsemiNy9aneYDPrNAyxqyuQth1rLZ9vcUAYN+yKp2u1torf/ioK4QR02eK9geqsoJVAavVlvyqkHg84pxi/aFrsJvR0CaQvREOiZZM6tk0Pw+bdNnHU5qzoGm4ll07ziIXmY9uerJ/uTCaVV6dQ49rYiejky7dX+OVx/8E6qLmW+fgSrbxDN38uZUo22DXHKNtbQIUe/C+pB9m4eJ8TY6gxAqiSKOX6uF38dHVAteSKyc11AXL aws-key # ↑ Der komplette SSH Public Key (RSA-Format)
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0WGP1EZykEtv5YGC9nMiPFW3U3DmZNzKFO5nEu6uozEHh4jLZzPNHSrfFTuQ2GnRDSt+XbOtTLdcj26+iPNiFoFha42aCIzYjt6V8Z+SQ9pzF4jPPzxwXfDdkEWylgoNnZ+4MG1lNFqa8aO7F62tX0Yj5khjC0Bs7Mb2cHLx1XZaxJV6qSaulDuBbLYe8QUZXkMc7wmob3PM0kflfolR3LE7LResIHWa4j4FL6r5cQmFlDU2BDPpKMFMGUfRSFiUtaWBNXFOWHQBC2+uKmuMPYP4vJC9sBgqMvPN/X2KyemqdMvdKXnCfrzadHuSSJYEzD64Cve5Zl9yVvY4AqyBD aws-key-lehrperson
+
+ssh_pwauth: false # SSH Passwort-Authentifizierung DEAKTIVIERT (nur Key-basiert erlaubt)
+disable_root: false # Root-User NICHT deaktivieren (root bleibt aktiv, aber Login nur per Key)
+package_update: true # Führe "apt update" beim ersten Boot aus (aktualisiert Paketliste)
+packages: # Liste von Paketen, die automatisch installiert werden sollen
+  - curl # Installiere curl (Tool für HTTP-Requests)
+  - wget # Installiere wget (Tool zum Herunterladen von Dateien)
