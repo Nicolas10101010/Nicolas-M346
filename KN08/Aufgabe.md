@@ -41,7 +41,7 @@ Nach der Ausführung der Backup-Lambda wurden 2 Snapshots erfolgreich erstellt:
 
 Jeder Snapshot erhält automatisch den Tag "DeleteOn" mit einem Datum 7 Tage in der Zukunft. Dies wird vom Cleanup-Skript verwendet um alte Backups zu löschen.
 
-![Snapshot-Liste](Images/snapshot-detail.png)
+![Snapshot-Liste](Images/snapshots-detail.png)
 
 ---
 
